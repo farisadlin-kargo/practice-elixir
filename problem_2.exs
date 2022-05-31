@@ -2,13 +2,15 @@ list = IO.gets("list: ")
 list = list |> String.replace("\n", "") |> String.split(" ", trim: true)
 
 result = Enum.reduce(list, %{
+    all_string: list,
     number: [],
     odd_number: [],
     even_number: [],
-    text: []
-}, fn value, acc -> 
+    non_number: []
+}, fn value, acc ->
             case Integer.parse(value) do
             {int_value, ""} when rem(int_value, 2) == 1 -> 
+            
             Map.merge(acc, %{
                 number: acc.number ++ [value], 
                 odd_number: acc.odd_number ++ [value]
@@ -21,7 +23,7 @@ result = Enum.reduce(list, %{
             })
             # Map.merge(map(), map())
            _ ->
-            Map.put(acc, :text, acc.text ++ [value])
+            Map.put(acc, :non_number, acc.non_number ++ [value])
             # Map.put(map(), string atau atom (key), value)
             end
         end
