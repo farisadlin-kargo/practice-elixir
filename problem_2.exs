@@ -30,3 +30,9 @@ result = Enum.reduce(list, %{
 )
 
 IO.inspect result
+
+searchName = IO.gets("search: ")
+searchName = String.replace(searchName, "\n", "")
+
+searchName = Enum.find_index(list, fn x -> x == searchName end)
+IO.inspect searchName
