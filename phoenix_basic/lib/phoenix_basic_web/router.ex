@@ -19,6 +19,8 @@ defmodule PhoenixBasicWeb.Router do
 
     get "/", PageController, :index
     resources "/vehicles", VehicleController
+    resources "/transporters", TransporterController
+
   end
 
 
