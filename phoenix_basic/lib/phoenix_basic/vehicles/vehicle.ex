@@ -11,7 +11,7 @@ defmodule PhoenixBasic.Vehicles.Vehicle do
   @doc false
   def changeset(vehicle, attrs) do
     vehicle
-    |> cast(attrs, [:license_plate, :id])
-    |> validate_required([:license_plate, :id])
+    |> cast(attrs, [:license_plate])
+    |> validate_required([:license_plate])
   end
 end
