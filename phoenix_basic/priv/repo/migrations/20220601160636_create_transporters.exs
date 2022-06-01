@@ -7,7 +7,7 @@ defmodule PhoenixBasic.Repo.Migrations.CreateTransporters do
       add :name, :string
       add :phone_number, :string
       add :npwp_number, :string
-      add :status, Ecto.Enum, values: [:not_validated, :validated]
+      add :status, Ecto.Enum, values: [:not_validated, :validated], null: :not_validated
       # add :status, :string
 
 
