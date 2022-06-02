@@ -48,7 +48,10 @@ defmodule PhoenixBasic.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:absinthe, "~> 1.6"},
+      {:absinthe_plug, "~> 1.5"},
+      {:dataloader, "~> 1.0"}
     ]
   end
 
@@ -67,4 +70,10 @@ defmodule PhoenixBasic.MixProject do
       "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
   end
+
+  defp deps do
+    [
+   
+    ]
+   end
 end

@@ -21,6 +21,12 @@ defmodule PhoenixBasicWeb.Router do
     resources "/vehicles", VehicleController
     resources "/transporters", TransporterController
 
+    forward "/graphiql",
+        Absinthe.Plug.GraphiQL,
+        schema: PhoenixBasicWeb.Schema,
+        interface: :simple,
+        context: %{pubsub: PhoenixBasicWeb.Endpoint}
+
   end
 
 
